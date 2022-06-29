@@ -1,0 +1,53 @@
+@use '../vars';
+
+.toaster-container {
+    position: fixed;
+    width:fit-content;
+    height: 60px;
+    display: flex;
+    justify-content:center;
+    place-items: center;
+    left: 0;
+    right: 0;
+    margin: 16px auto;
+    padding: 12px 40px 12px 12px;
+    gap: 12px;
+    cursor: pointer;
+    border-radius: 12px;
+    z-index: 2;
+}
+.toaster-container.error {
+    background-color: var(--redWarning);
+}
+.toaster-container.success {
+    background-color: var(--greenSuccess);
+}
+
+.toaster-container .toaster-message {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--text);
+}
+
+.toaster-container .toaster-message.error {
+    color: var(--redWarningText);
+}
+.toaster-container .toaster-message.success {
+    color: var(--greenSuccessText);
+}
+.toaster-container span:nth-child(1) {
+    align-self: center;
+    padding-bottom: 8px;
+}
+
+.toaster-container img {
+    width: 30px;
+    padding: 2px;
+}
+
+.toaster-container span.close-toaster {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px;
+}
